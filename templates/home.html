@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block up%}
+
+  {{ super() }}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for cat, msg in messages %}
+    <p class="{{cat}}">{{ msg }}</p>
+  {% endfor %}
+{% endwith %}
+<div class="hero">
+<video autoplay muted loop>
+  <source src="static/vid/ucl.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+{% endblock%}

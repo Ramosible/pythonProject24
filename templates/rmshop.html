@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{%block up%}
+  {{ super() }}
+<center>
+    <ul class="shop">
+{% for i in rm_shopp.items %}
+  <em style="color:blue "><li>{{ i }} </li></em>
+{% endfor %}
+</ul>
+</center>
+
+
+
+<nav aria-label="Page navigation example">
+                     <ul class="pagination"  >
+                    {% if rm_shopp.has_prev %}
+                      <li class="page-item"> <a class="page-link" href="{{ url_for('rmshop', page=rm_shopp.prev_num) }}">Previous</a></li>
+                    {% else %}
+                      <li class="page-item"><a class="page-link btn disabled" href="#">Previous</a></li>
+                    {% endif %}
+
+
+                    {% if rm_shopp.has_next %}
+                      <li class="page-item"> <a class="page-link" href="{{ url_for('rmshop', page=rm_shopp.next_num) }}">Next</a></li>
+                    {% else %}
+                      <li class="page-item"><a class="page-link btn disabled" href="#">Next</a></li>
+                    {% endif %}
+
+                </ul>
+
+              </nav>
+
+{% endblock%}
