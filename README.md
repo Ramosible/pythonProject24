@@ -1,1 +1,1 @@
-# pythonProject24
+ this is small login and registration project using flask. i am using SQLAlchemy module to new add a users in database, and also to get some informanion from the database. also i am using api-football api, and user can see livescore and some old standings through it.
